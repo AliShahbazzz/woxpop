@@ -1,0 +1,17 @@
+.info {
+    margin: 0;
+}
+
+.info-form {
+    display: flex;
+    justify-content: center;
+}
+
+.info-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-input {
+    margin: 10% 0;
+}

@@ -1,0 +1,17 @@
+.name {
+    margin: 0;
+}
+
+.name-form {
+    display: flex;
+    justify-content: center;
+}
+
+.name-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-input {
+    margin: 10% 0;
+}

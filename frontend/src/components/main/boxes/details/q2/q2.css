@@ -1,0 +1,16 @@
+.q2 {
+    margin: 0;
+}
+
+.q2-form {
+    display: flex;
+}
+
+.q2-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.q2-input {
+    margin: 3% 0;
+}

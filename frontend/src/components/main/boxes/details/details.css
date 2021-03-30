@@ -1,0 +1,33 @@
+.details {
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.details-heading {
+    margin: 10% 0;
+}
+
+.details-form {
+    display: flex;
+}
+
+.details-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-input {
+    margin: 2% 0;
+    font-size: 16px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+}
+
+.MuiTableContainer-root {
+    width: 30% !important;
+    text-align: center;
+}
+
+.MuiTableHead-root {
+    text-align: center;
+}
