@@ -22,12 +22,12 @@ app.use(express.static("../frontend/build"));
 // Routes
 const path = require("path");
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve("../", "frontend", "public", "index.html"));
+    res.sendFile(path.resolve("../", "frontend", "build", "index.html"));
 });
 app.use('/api/home/', Home)
 
 // Server Config
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`Server started on port: ${port}`);
 });
