@@ -77,7 +77,7 @@ export default class Main extends Component {
 
     onSubmit = (x) => {
         if (x === 0) {
-            axios.post('http://localhost:5000/api/home/',
+            axios.post('api/home/',
                 {
                     name: this.state.values.name,
                     email: this.state.values.email,
@@ -89,11 +89,10 @@ export default class Main extends Component {
                     this.setState({
                         values: val
                     })
-                    console.log(res.data)
                 })
                 .catch((err) => console.log(err))
         } else if (x === 1) {
-            axios.post('http://localhost:5000/api/home/addOptional/',
+            axios.post('api/home/addOptional/',
                 {
                     id: this.state.values.id,
                     marketplace: this.state.values.marketplace,
@@ -106,11 +105,10 @@ export default class Main extends Component {
                     this.setState({
                         values: val
                     })
-                    console.log(res.data)
                 })
                 .catch((err) => console.log(err))
         } else if (x === 2) {
-            axios.post('http://localhost:5000/api/home/addDetails/',
+            axios.post('api/home/addDetails/',
                 {
                     id: this.state.values.id,
                     impressions: this.state.values.impressions,
@@ -127,7 +125,6 @@ export default class Main extends Component {
                     this.setState({
                         result: res.data.result
                     }, this.child.current.resValues(res.data.result))
-                    console.log(res.data.result)
                 })
                 .catch((err) => console.log(err))
         }

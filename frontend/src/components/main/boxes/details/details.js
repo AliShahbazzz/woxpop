@@ -118,7 +118,7 @@ class Details extends Component {
                                             {row}
                                             <input
                                                 required
-                                                id="standard-basic"
+                                                name={row}
                                                 key={row}
                                                 onChange={(e) => this.onChange(row, e)} />
                                         </div>
