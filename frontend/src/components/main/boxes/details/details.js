@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -24,17 +23,17 @@ const names = [
     'total_units',
     'total_sales'
 ]
-const Cnames = [
-    'Impressions',
-    'Clicks',
-    'CPC',
-    'CTR %',
-    'Advertising Spend',
-    'ACoS %',
-    'Advertising order',
-    'Total Units (Ads + Non Ads)',
-    'Total Sales (Ads + Non Ads)'
-]
+// const Cnames = [
+//     'Impressions',
+//     'Clicks',
+//     'CPC',
+//     'CTR %',
+//     'Advertising Spend',
+//     'ACoS %',
+//     'Advertising order',
+//     'Total Units (Ads + Non Ads)',
+//     'Total Sales (Ads + Non Ads)'
+// ]
 
 const StyledTableCell = withStyles((theme) => ({
     // head: {
@@ -98,76 +97,6 @@ class Details extends Component {
     render() {
         return (
             <div className="details">
-                {/* <form className="details-form">
-                        <div className="details-inner">
-                        <b>Current</b>
-                        <div className="details-heading">
-                            Q1
-                        </div>
-                        <div className="details-input">
-                            <TextField
-                                required
-                                id="standard-basic"
-                                label="Impressions"
-                                onChange={(e) => this.onChange('impressions', e)} />
-                        </div>
-                        <div className="details-input">
-                            <TextField
-                                required
-                                id="standard-basic"
-                                label="Clicks"
-                                onChange={(e) => this.onChange('clicks', e)} />
-                        </div>
-                        <div className="details-input">
-                            <TextField
-                                required
-                                id="standard-basic"
-                                label="CPC"
-                                onChange={(e) => this.onChange('cpc', e)} />
-                        </div>
-                        <div className="details-input">
-                            <TextField
-                                required
-                                id="standard-basic"
-                                label="CTR %"
-                                onChange={(e) => this.onChange('ctr', e)} />
-                        </div>
-                        <div className="details-input">
-                            <TextField
-                                required
-                                id="standard-basic"
-                                label="Advertising Spend"
-                                onChange={(e) => this.onChange('advertising_spend', e)} />
-                        </div>
-                        <div className="details-input">
-                            <TextField
-                                required
-                                id="standard-basic"
-                                label="ACoS %"
-                                onChange={(e) => this.onChange('acos', e)} />
-                        </div>
-                        <div className="details-input">
-                            <TextField
-                                required
-                                id="standard-basic"
-                                label="Advertising Orders"
-                                onChange={(e) => this.onChange('advertising_order', e)} />
-                        </div>
-                        <div className="details-input">
-                            <TextField
-                                required
-                                id="standard-basic"
-                                label="Total Units (Ads + Non Ads)"
-                                onChange={(e) => this.onChange('total_units', e)} />
-                        </div>
-                        <div className="details-input">
-                            <TextField
-                                required
-                                id="standard-basic"
-                                label="Total Sales (Ads + Non Ads)"
-                                onChange={(e) => this.onChange('total_sales', e)} />
-                        </div>
-                    </div> */}
 
                 <TableContainer component={Paper} >
                     <Table>
@@ -190,6 +119,7 @@ class Details extends Component {
                                             <input
                                                 required
                                                 id="standard-basic"
+                                                key={row}
                                                 onChange={(e) => this.onChange(row, e)} />
                                         </div>
                                     </StyledTableCell>

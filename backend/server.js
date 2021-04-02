@@ -16,6 +16,9 @@ mongoose
     })
     .catch(err => console.log(err))
 
+//Static folder
+app.use(express.static("../frontend/build"));
+
 // Routes
 const path = require("path");
 app.get("/", (req, res) => {
