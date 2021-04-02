@@ -7,6 +7,11 @@ router.get('/', (req, res) => {
     User.find().then((items) => res.json(items))
 })
 
+router.delete('/', (req, res) => {
+    User.find().then((items) => User.collection.deleteMany({}), res.json({ status: "removed" }))
+        .catch((err) => console.log(err))
+})
+
 
 router.post('/', (req, res) => {
     const { body } = req;
@@ -36,18 +41,20 @@ router.post('/addOptional', (req, res) => {
         category,
         no_of_skus,
     } = body;
+    if (id !== '') {
 
-    User.findByIdAndUpdate(id, {
-        marketplace: marketplace,
-        category: category,
-        no_of_skus: no_of_skus,
-    })
-        .then(res.json({
-            success: true,
-            message: 'Updated',
-            id: id
-        }))
-        .catch(err => res.status(404).json({ success: false, error: err }))
+        User.findByIdAndUpdate(id, {
+            marketplace: marketplace,
+            category: category,
+            no_of_skus: no_of_skus,
+        })
+            .then(res.json({
+                success: true,
+                message: 'Updated',
+                id: id
+            }))
+            .catch(err => res.status(404).json({ success: false, error: err }))
+    }
 })
 router.post('/addDetails', (req, res) => {
     const { body } = req;
@@ -63,7 +70,6 @@ router.post('/addDetails', (req, res) => {
         total_units,
         total_sales
     } = body;
-
     User.findByIdAndUpdate(id, {
         input: {
             impressions: impressions,

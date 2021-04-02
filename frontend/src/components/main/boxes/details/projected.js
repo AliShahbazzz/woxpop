@@ -8,6 +8,19 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+
+const names = [
+    'impressions',
+    'clicks',
+    'cpc',
+    'ctr',
+    'advertising_spend',
+    'acos',
+    'advertising_order',
+    'total_units',
+    'total_sales'
+]
+
 const StyledTableCell = withStyles((theme) => ({
     // head: {
     //     backgroundColor: theme.palette.common.black,
@@ -26,41 +39,55 @@ const StyledTableRow = withStyles((theme) => ({
     },
 }))(TableRow);
 
-function createData(name, q2, q3, q4) {
-    return { name, q2, q3, q4 };
-}
-
-const rows = [
-    createData('impressions', 6.0, 24, 4.0),
-    createData('clicks', 9.0, 37, 4.3),
-    createData('cpc', 16.0, 24, 6.0),
-    createData('ctr', 3.7, 67, 4.3),
-    createData('advertising_spend', 16.0, 49, 3.9),
-    createData('acos', 9.0, 37, 4.3),
-    createData('advertising_order', 16.0, 24, 6.0),
-    createData('total_units', 3.7, 67, 4.3),
-    createData('total_sales', 16.0, 49, 3.9),
-];
-
 export default class Projected extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            values: {
+                impressions: { Q2: 0, Q3: 0, Q4: 0 },
+                clicks: { Q2: 0, Q3: 0, Q4: 0 },
+                cpc: { Q2: 0, Q3: 0, Q4: 0 },
+                ctr: { Q2: 0, Q3: 0, Q4: 0 },
+                advertising_spend: { Q2: 0, Q3: 0, Q4: 0 },
+                acos: { Q2: 0, Q3: 0, Q4: 0 },
+                advertising_order: { Q2: 0, Q3: 0, Q4: 0 },
+                total_units: { Q2: 0, Q3: 0, Q4: 0 },
+                total_sales: { Q2: 0, Q3: 0, Q4: 0 }
+            }
+        }
+    }
+    resValues1(res) {
+        let val = this.state.values
+        for (let i = 0; i <= 8; i++) {
+            let newVal = res[names[i]].projected
+            val[names[i]] = newVal
+            this.setState({ values: val })
+        }
+    }
+
     render() {
         return (
             <TableContainer component={Paper} >
                 <Table>
                     <TableHead>
-                        <TableRow><b>Projected</b></TableRow>
-                        <TableRow style={{ 'fontSize ': '18px' }}>
-                            <StyledTableCell align="right"><b>Q2</b></StyledTableCell>
-                            <StyledTableCell align="right"><b>Q3</b></StyledTableCell>
-                            <StyledTableCell align="right"><b>Q4</b></StyledTableCell>
-                        </TableRow>
+                        <StyledTableRow>
+                            <StyledTableCell colSpan={3} align="center" fontSize='22px' >
+                                <b>Projected</b>
+                            </StyledTableCell>
+                        </StyledTableRow>
+                        <StyledTableRow style={{ 'fontSize ': '18px' }}>
+                            <StyledTableCell align="right">Q2</StyledTableCell>
+                            <StyledTableCell align="right">Q3</StyledTableCell>
+                            <StyledTableCell align="right">Q4</StyledTableCell>
+                        </StyledTableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row) => (
-                            <StyledTableRow key={row.name}>
-                                <StyledTableCell align="right">{row.q2}</StyledTableCell>
-                                <StyledTableCell align="right">{row.q3}</StyledTableCell>
-                                <StyledTableCell align="right">{row.q4}</StyledTableCell>
+                        {names.map((row) => (
+                            <StyledTableRow key={row}>
+                                <StyledTableCell align="right">{this.state.values[row].Q2}</StyledTableCell>
+                                <StyledTableCell align="right">{this.state.values[row].Q3}</StyledTableCell>
+                                <StyledTableCell align="right">{this.state.values[row].Q4}</StyledTableCell>
                             </StyledTableRow>
                         ))}
                     </TableBody>
