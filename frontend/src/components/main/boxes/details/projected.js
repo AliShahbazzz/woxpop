@@ -72,14 +72,16 @@ export default class Projected extends Component {
                 <Table>
                     <TableHead>
                         <StyledTableRow>
-                            <StyledTableCell colSpan={3} align="center" fontSize='22px' >
-                                <b>Projected</b>
+                            <StyledTableCell colSpan={3} align="center" >
+                                <span style={{ 'fontSize': '18px', 'color': '#5ebc28' }}>
+                                    <b>Projected</b>
+                                </span>
                             </StyledTableCell>
                         </StyledTableRow>
-                        <StyledTableRow style={{ 'fontSize ': '18px' }}>
-                            <StyledTableCell align="right">Q2</StyledTableCell>
-                            <StyledTableCell align="right">Q3</StyledTableCell>
-                            <StyledTableCell align="right">Q4</StyledTableCell>
+                        <StyledTableRow>
+                            <StyledTableCell align="right" style={{ 'color': '#5ebc28' }}><b>Q2</b></StyledTableCell>
+                            <StyledTableCell align="right" style={{ 'color': '#5ebc28' }}><b>Q3</b></StyledTableCell>
+                            <StyledTableCell align="right" style={{ 'color': '#5ebc28' }}><b>Q4</b></StyledTableCell>
                         </StyledTableRow>
                     </TableHead>
                     <TableBody>

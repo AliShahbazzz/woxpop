@@ -7,6 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Input from '@material-ui/core/Input';
 import Projected from './projected';
 import Potential from './potential';
 import './details.css'
@@ -23,17 +24,17 @@ const names = [
     'total_units',
     'total_sales'
 ]
-// const Cnames = [
-//     'Impressions',
-//     'Clicks',
-//     'CPC',
-//     'CTR %',
-//     'Advertising Spend',
-//     'ACoS %',
-//     'Advertising order',
-//     'Total Units (Ads + Non Ads)',
-//     'Total Sales (Ads + Non Ads)'
-// ]
+const Cnames = [
+    'Impressions',
+    'Clicks',
+    'CPC',
+    'CTR %',
+    'Advertising Spend',
+    'ACoS %',
+    'Advertising order',
+    'Total Units (Ads + Non Ads)',
+    'Total Sales (Ads + Non Ads)'
+]
 
 const StyledTableCell = withStyles((theme) => ({
     // head: {
@@ -53,16 +54,12 @@ const StyledTableRow = withStyles((theme) => ({
     },
 }))(TableRow);
 class Details extends Component {
-    componentWillReceiveProps(props) {
-        this.setState({ result: props.result });
-    }
 
     constructor(props) {
         super(props);
         this.child1 = React.createRef();
         this.child2 = React.createRef();
         this.state = {
-            result: this.props.result,
             values: {
                 impressions: '',
                 clicks: '',
@@ -97,17 +94,18 @@ class Details extends Component {
     render() {
         return (
             <div className="details">
-
                 <TableContainer component={Paper} >
                     <Table>
                         <TableHead>
                             <StyledTableRow>
-                                <StyledTableCell align="center" fontSize='22px' >
-                                    <b>Current</b>
+                                <StyledTableCell align="center" >
+                                    <span style={{ 'fontSize': '18px', 'color': '#5ebc28' }}>
+                                        <b>Current</b>
+                                    </span>
                                 </StyledTableCell>
                             </StyledTableRow>
-                            <StyledTableRow style={{ 'fontSize ': '18px' }}>
-                                <StyledTableCell align="center">Q1</StyledTableCell>
+                            <StyledTableRow>
+                                <StyledTableCell align="center" style={{ 'color': '#5ebc28' }}><b>Q1</b></StyledTableCell>
                             </StyledTableRow>
                         </TableHead>
                         <TableBody>
@@ -115,12 +113,15 @@ class Details extends Component {
                                 <StyledTableRow key={row}>
                                     <StyledTableCell align="center">
                                         <div className="details-input">
-                                            {row}
-                                            <input
+                                            <span className="details-input-span" style={{ 'color': '#5ebc28' }}>
+                                                {Cnames[names.indexOf(row)]}
+                                            </span>
+                                            <Input
                                                 required
-                                                id="standard-basic"
+                                                id={row}
                                                 key={row}
-                                                onChange={(e) => this.onChange(row, e)} />
+                                                onChange={(e) => this.onChange(row, e)}
+                                            />
                                         </div>
                                     </StyledTableCell>
                                 </StyledTableRow>
@@ -128,7 +129,6 @@ class Details extends Component {
                         </TableBody>
                     </Table>
                 </TableContainer >
-                {/* </form> */}
                 <Projected ref={this.child1} />
                 <Potential ref={this.child2} />
             </div>
