@@ -2,6 +2,14 @@
     margin: 0;
 }
 
+.name-text-1 {
+    font-size: 2em;
+}
+
+.name-text-2 {
+    font-size: 1em;
+}
+
 .name-form {
     display: flex;
     justify-content: center;
@@ -10,8 +18,21 @@
 .name-inner {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .name-input {
-    margin: 10% 0;
+    margin: 5% 0;
+}
+
+.MuiFormLabel-root.Mui-focused {
+    color: #5EBC28 !important;
+}
+
+.MuiInput-underline::before {
+    border-bottom-color: #5EBC28 !important;
+}
+
+.MuiInput-underline::after {
+    border-bottom-color: #5EBC28 !important;
 }

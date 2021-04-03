@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import MailIcon from '@material-ui/icons/Mail';
+import StoreIcon from '@material-ui/icons/Store';
 import './name.css';
 
 class Name extends Component {
@@ -33,29 +37,61 @@ class Name extends Component {
             <div className="name">
                 <form className="name-form">
                     <div className="name-inner">
+                        <div>
+                            <div className="name-text-1">
+                                Get Free Access to Projection Calculator
+                                </div><br />
+                            <div className="name-text-2">
+                                Learn how much more money your Product Listings can (and should)<br /> be earning You... Every Month, Every Quarter, and Every YEAR!
+                        </div>
+                        </div>
                         <div className="name-input">
                             <TextField
                                 required
-                                id="standard-basic"
                                 label="Name"
+                                id="Name"
                                 value={this.state.values.name}
-                                onChange={(e) => this.onChange('name', e)} />
+                                onChange={(e) => this.onChange('name', e)}
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <AccountCircle />
+                                        </InputAdornment>
+                                    ),
+                                }}
+                            />
                         </div>
                         <div className="name-input">
                             <TextField
                                 required
-                                id="standard-basic"
                                 label="E-mail Address"
+                                id="E-mail Address"
                                 value={this.state.values.email}
-                                onChange={(e) => this.onChange('email', e)} />
+                                onChange={(e) => this.onChange('email', e)}
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <MailIcon />
+                                        </InputAdornment>
+                                    ),
+                                }}
+                            />
                         </div>
                         <div className="name-input">
                             <TextField
                                 required
-                                id="standard-basic"
                                 label="Storefront / ASIN"
+                                id="Storefront / ASIN"
                                 value={this.state.values.storefront}
-                                onChange={(e) => this.onChange('storefront', e)} />
+                                onChange={(e) => this.onChange('storefront', e)}
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <StoreIcon />
+                                        </InputAdornment>
+                                    ),
+                                }}
+                            />
                         </div>
                     </div>
                 </form>

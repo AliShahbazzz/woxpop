@@ -10,8 +10,21 @@
 .info-inner {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .info-input {
-    margin: 10% 0;
+    margin: 5% 0;
+}
+
+.MuiFormLabel-root.Mui-focused {
+    color: #5EBC28 !important;
+}
+
+.MuiInput-underline::before {
+    border-bottom-color: #5EBC28 !important;
+}
+
+.MuiInput-underline::after {
+    border-bottom-color: #5EBC28 !important;
 }
