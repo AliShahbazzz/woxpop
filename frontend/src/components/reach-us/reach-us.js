@@ -45,7 +45,6 @@ export default class Reach extends Component {
                     values: val,
                     showModal: !this.state.showModal
                 })
-                console.log(res)
             })
             .catch((err) => console.log(err))
     }

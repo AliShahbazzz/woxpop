@@ -93,7 +93,6 @@ export default class Main2 extends Component {
                     this.setState({
                         values: val
                     })
-                    console.log(res.data)
                 })
                 .catch((err) => console.log(err))
         } else if (x === 1) {
@@ -110,7 +109,6 @@ export default class Main2 extends Component {
                     this.setState({
                         values: val
                     })
-                    console.log(res.data)
                 })
                 .catch((err) => console.log(err))
         }
@@ -145,7 +143,6 @@ export default class Main2 extends Component {
                         this.setState({
                             result: res.data.result
                         }, this.child.current.resValues(res.data.result))
-                        console.log(res.data.result)
                         window.scrollTo(0, 0)
                     })
                     .catch((err) => console.log(err))
