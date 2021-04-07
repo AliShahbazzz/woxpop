@@ -26,6 +26,10 @@ const UserSchema = new Schema({
         type: String,
         default: ''
     },
+    message: {
+        type: String,
+        deafult: ''
+    },
     input: {
         impressions: {
             type: String,

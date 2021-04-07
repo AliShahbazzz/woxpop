@@ -37,16 +37,17 @@ class Name extends Component {
             <div className="name">
                 <form className="name-form">
                     <div className="name-inner">
-                        <div>
+                        {/* <div>
                             <div className="name-text-1">
-                                Get Free Access to Projection Calculator
+                                Let us help you
                                 </div><br />
-                            <div className="name-text-2">
+                                <div className="name-text-2">
                                 Learn how much more money your Product Listings can (and should)<br /> be earning You... Every Month, Every Quarter, and Every YEAR!
-                        </div>
-                        </div>
-                        <div className="name-input">
+                            </div>
+                        </div> */}
+                        <div className="name-inputs">
                             <TextField
+                                className="name-input"
                                 required
                                 label="Name"
                                 id="Name"
@@ -61,8 +62,9 @@ class Name extends Component {
                                 }}
                             />
                         </div>
-                        <div className="name-input">
+                        <div className="name-inputs">
                             <TextField
+                                className="name-input"
                                 required
                                 label="E-mail Address"
                                 id="E-mail Address"
@@ -77,8 +79,9 @@ class Name extends Component {
                                 }}
                             />
                         </div>
-                        <div className="name-input">
+                        <div className="name-inputs">
                             <TextField
+                                className="name-input"
                                 required
                                 label="Storefront / ASIN"
                                 id="Storefront / ASIN"

@@ -1,0 +1,49 @@
+.reach-main {
+    margin: 3%;
+}
+
+.reach-text-1 {
+    font-size: 2em;
+    margin-bottom: 2%;
+    font-weight: 600;
+    color: #43a30c;
+    font-family: 'Merriweather', serif;
+}
+
+.reach-text-2 {
+    font-size: 1.5em;
+    margin-bottom: 2%;
+    font-weight: 600;
+    color: #242424;
+    font-family: 'Merriweather', serif;
+}
+
+.reach-btn {
+    background-color: #242424 !important;
+    color: #fff !important;
+    text-transform: none !important;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+.reach-us-form {
+    display: flex;
+    justify-content: center;
+}
+
+.reach-us-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.reach-us-inputs {
+    margin: 2% 0;
+    width: 80%;
+}
+
+.reach-us-input {
+    font-size: 1em;
+    width: 100%;
+}
