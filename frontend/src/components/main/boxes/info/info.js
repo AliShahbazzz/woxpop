@@ -37,16 +37,17 @@ class Info extends Component {
             <div className="info">
                 <form className="info-form">
                     <div className="info-inner">
-                        <div>
+                        {/* <div>
                             <div className="name-text-1">
                                 Get Free Access to Projection Calculator
                                 </div><br />
                             <div className="name-text-2">
                                 Learn how much more money your Product Listings can (and should)<br /> be earning You... Every Month, Every Quarter, and Every YEAR!
                         </div>
-                        </div>
-                        <div className="info-input">
+                        </div> */}
+                        <div className="info-inputs">
                             <TextField
+                                className="info-input"
                                 placeholder="(Optional)"
                                 label="Marketplace"
                                 id="Marketplace"
@@ -61,8 +62,9 @@ class Info extends Component {
                                 }}
                             />
                         </div>
-                        <div className="info-input">
+                        <div className="info-inputs">
                             <TextField
+                                className="info-input"
                                 placeholder="(Optional)"
                                 label="Category"
                                 id="Category"
@@ -77,8 +79,9 @@ class Info extends Component {
                                 }}
                             />
                         </div>
-                        <div className="info-input">
+                        <div className="info-inputs">
                             <TextField
+                                className="info-input"
                                 placeholder="(Optional)"
                                 label="Number of SKUs"
                                 id="Number of SKUs"

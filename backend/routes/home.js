@@ -91,4 +91,24 @@ router.post('/addDetails', (req, res) => {
         .catch(err => res.status(404).json({ success: false, error: err }))
 })
 
+router.post('/addMessage', (req, res) => {
+    const { body } = req;
+    const {
+        id,
+        message,
+    } = body;
+    if (id !== '') {
+
+        User.findByIdAndUpdate(id, {
+            message: message,
+        })
+            .then(res.json({
+                success: true,
+                message: 'Updated',
+                id: id
+            }))
+            .catch(err => res.status(404).json({ success: false, error: err }))
+    }
+})
+
 module.exports = router;

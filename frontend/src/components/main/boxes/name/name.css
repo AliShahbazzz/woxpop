@@ -21,8 +21,12 @@
     align-items: center;
 }
 
-.name-input {
-    margin: 5% 0;
+.name-inputs {
+    margin: 10% 0;
+}
+
+.name-input input {
+    font-size: 1.5em;
 }
 
 .MuiFormLabel-root.Mui-focused {

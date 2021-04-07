@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
     },
     footer: {
-        padding: theme.spacing(3, 2),
+        padding: theme.spacing(2, 2),
         marginTop: 'auto',
         backgroundColor: '#242424',
     },
@@ -37,7 +37,7 @@ export default function StickyFooter() {
         <div className={classes.root} style={styles.root}>
             <footer className={classes.footer}>
                 <Container maxWidth="sm">
-                    <Typography variant="body1">WOXPOP</Typography>
+                    <Typography variant="body1">Woxpop</Typography>
                     <Copyright />
                 </Container>
             </footer>

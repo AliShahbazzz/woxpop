@@ -22,18 +22,30 @@ const names = [
     'acos',
     'advertising_order',
     'total_units',
-    'total_sales'
+    'total_sales',
 ]
 const Cnames = [
     'Impressions',
     'Clicks',
     'CPC',
-    'CTR %',
+    'CTR',
     'Advertising Spend',
-    'ACoS %',
+    'ACoS',
     'Advertising order',
-    'Total Units (Ads + Non Ads)',
-    'Total Sales (Ads + Non Ads)'
+    'Total Units Sold (Ads + Organic)',
+    'Total Sales Revenue (Ads + Organic)',
+]
+
+const placeholders = [
+    '12450',
+    '3540',
+    '0.60',
+    '0.35',
+    '5000',
+    '50',
+    '500',
+    '1000',
+    '10000',
 ]
 
 const StyledTableCell = withStyles((theme) => ({
@@ -60,6 +72,7 @@ class Details extends Component {
         this.child1 = React.createRef();
         this.child2 = React.createRef();
         this.state = {
+            showResult: false,
             values: {
                 impressions: '',
                 clicks: '',
@@ -74,6 +87,9 @@ class Details extends Component {
         }
     }
     resValues(res) {
+        this.setState({
+            showResult: true
+        })
         this.child1.current.resValues1(res)
         this.resValues2(res)
     }
@@ -92,6 +108,7 @@ class Details extends Component {
     }
 
     render() {
+        let result = <><Projected ref={this.child1} /><Potential ref={this.child2} /></>
         return (
             <div className="details">
                 <TableContainer component={Paper} >
@@ -99,27 +116,33 @@ class Details extends Component {
                         <TableHead>
                             <StyledTableRow>
                                 <StyledTableCell align="center" >
-                                    <span style={{ 'fontSize': '18px', 'color': '#5ebc28' }}>
-                                        <b>Current</b>
+                                    <span className="details-heading">
+                                        <b>Current Quarter</b>
                                     </span>
                                 </StyledTableCell>
                             </StyledTableRow>
                             <StyledTableRow>
-                                <StyledTableCell align="center" style={{ 'color': '#5ebc28' }}><b>Q1</b></StyledTableCell>
+                                <StyledTableCell
+                                    align="center"
+                                // style={{ 'color': '#5ebc28' }}
+                                ><b>Q1</b></StyledTableCell>
                             </StyledTableRow>
                         </TableHead>
                         <TableBody>
                             {names.map((row) => (
                                 <StyledTableRow key={row}>
                                     <StyledTableCell align="center">
-                                        <div className="details-input">
-                                            <span className="details-input-span" style={{ 'color': '#5ebc28' }}>
+                                        <div className="details-inputs">
+                                            <span className="details-input-span" >
                                                 {Cnames[names.indexOf(row)]}
                                             </span>
                                             <Input
+                                                className="details-input"
+                                                placeholder={placeholders[names.indexOf(row)]}
                                                 required
                                                 id={row}
                                                 key={row}
+                                                type="number"
                                                 onChange={(e) => this.onChange(row, e)}
                                             />
                                         </div>
@@ -129,8 +152,9 @@ class Details extends Component {
                         </TableBody>
                     </Table>
                 </TableContainer >
-                <Projected ref={this.child1} />
-                <Potential ref={this.child2} />
+                {this.state.showResult ?
+                    result
+                    : null}
             </div>
         );
     }

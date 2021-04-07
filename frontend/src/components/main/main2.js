@@ -7,6 +7,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import axios from 'axios';
+import ReachUs from '../reach-us/reach-us';
 import './main.css';
 
 export default class Main2 extends Component {
@@ -27,6 +28,7 @@ export default class Main2 extends Component {
                 marketplace: '',
                 category: '',
                 no_of_skus: '',
+                message: '',
                 impressions: '',
                 clicks: '',
                 cpc: '',
@@ -117,26 +119,39 @@ export default class Main2 extends Component {
     calculate = () => {
         let val = this.state.values
         if (this.state.filled) {
-            axios.post('http://localhost:5000/api/home/addDetails/',
-                {
-                    id: val.id,
-                    impressions: val.impressions,
-                    clicks: val.clicks,
-                    cpc: val.cpc,
-                    ctr: val.ctr,
-                    advertising_spend: val.advertising_spend,
-                    acos: val.acos,
-                    advertising_order: val.advertising_order,
-                    total_units: val.total_units,
-                    total_sales: val.total_sales
-                })
-                .then((res) => {
-                    this.setState({
-                        result: res.data.result
-                    }, this.child.current.resValues(res.data.result))
-                    console.log(res.data.result)
-                })
-                .catch((err) => console.log(err))
+            if (val.impressions !== '' &
+                val.clicks !== '' &
+                val.cpc !== '' &
+                val.ctr !== '' &
+                val.advertising_spend !== '' &
+                val.acos !== '' &
+                val.advertising_order !== '' &
+                val.total_units !== '' &
+                val.total_sales !== '') {
+                axios.post('http://localhost:5000/api/home/addDetails/',
+                    {
+                        id: val.id,
+                        impressions: val.impressions,
+                        clicks: val.clicks,
+                        cpc: val.cpc,
+                        ctr: val.ctr,
+                        advertising_spend: val.advertising_spend,
+                        acos: val.acos,
+                        advertising_order: val.advertising_order,
+                        total_units: val.total_units,
+                        total_sales: val.total_sales
+                    })
+                    .then((res) => {
+                        this.setState({
+                            result: res.data.result
+                        }, this.child.current.resValues(res.data.result))
+                        console.log(res.data.result)
+                        window.scrollTo(0, 0)
+                    })
+                    .catch((err) => console.log(err))
+            } else {
+                alert("Please fill all the fields!")
+            }
         } else {
             this.setState({
                 open: !this.state.open
@@ -155,6 +170,20 @@ export default class Main2 extends Component {
         let disableBtn = val.name === '' || val.email === '' || val.storefront === ''
         return (
             <div className="main">
+
+                {this.state.result === '' ?
+                    <div className="main-text">
+                        <div className="main-text-1">
+                            Get Free Access to Projection Calculator
+                    </div>
+                        <div className="main-text-2">
+                            Learn how much money your Amazon Business could make in a year with the
+                        <br />right execution by an expert team.
+                    </div>
+                    </div> :
+                    <ReachUs
+                        mainState={this.state.values}
+                    />}
                 <Details
                     ref={this.child}
                     result={this.state.result}

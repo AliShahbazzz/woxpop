@@ -5,10 +5,6 @@
     font-family: "Roboto", sans-serif;
 }
 
-.details-heading {
-    margin: 10% 0;
-}
-
 .details-form {
     display: flex;
 }
@@ -18,7 +14,11 @@
     flex-direction: column;
 }
 
-.details-input {
+.details-heading {
+    font-size: 18px;
+}
+
+.details-inputs {
     display: flex;
     justify-content: space-between;
     font-size: 11px;
@@ -26,17 +26,38 @@
     text-align: left;
 }
 
-.details-input input {
+.details-inputs input {
     border: 0px solid black;
     border-radius: 3px;
 }
 
 .details-input-span {
     font-size: 16px;
+    /* color: #5ebc28; */
+    font-weight: 600;
+    font-family: 'Montserrat';
+}
+
+.details-input input {
+    padding: 0 !important;
+    text-decoration: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 .MuiTableContainer-root {
-    width: 30% !important;
+    width: 35% !important;
     text-align: center;
 }
 
@@ -44,6 +65,6 @@
     text-align: center;
 }
 
-.MuiInputBase-input {
+/* .MuiInputBase-input {
     padding: 0 !important;
-}
+} */

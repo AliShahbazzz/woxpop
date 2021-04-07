@@ -13,8 +13,12 @@
     align-items: center;
 }
 
-.info-input {
+.info-inputs {
     margin: 5% 0;
+}
+
+.info-input input {
+    font-size: 1.5em;
 }
 
 .MuiFormLabel-root.Mui-focused {
