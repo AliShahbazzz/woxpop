@@ -111,4 +111,24 @@ router.post('/addMessage', (req, res) => {
     }
 })
 
+router.post('/contact', (req, res) => {
+    const { body } = req;
+    const {
+        name,
+        email,
+        message,
+    } = body;
+
+    let newUser = new User();
+    newUser.name = name
+    newUser.email = email
+    newUser.message = message
+    newUser.save(() => {
+        return res.json({
+            success: true,
+            message: 'Created',
+        })
+    })
+})
+
 module.exports = router;

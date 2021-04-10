@@ -1,29 +1,34 @@
-.reach-main {
-    margin: 3%;
-}
+.reach-main {}
 
 .reach-text-1 {
-    font-size: 2em;
-    margin-bottom: 2%;
+    font-size: 1.1em;
+    margin-bottom: 1%;
     font-weight: 600;
-    color: #43a30c;
-    font-family: 'Merriweather', serif;
+    color: #fff;
+    font-family: 'Josefin Sans';
+    text-align: center;
 }
 
 .reach-text-2 {
     font-size: 1.5em;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     font-weight: 600;
-    color: #242424;
-    font-family: 'Merriweather', serif;
+    color: #000000;
+    font-family: 'Josefin Sans';
+}
+
+.reach-btn-root {
+    display: flex;
+    margin-right: 5%;
+    justify-content: flex-end;
 }
 
 .reach-btn {
-    background-color: #242424 !important;
+    background-color: #0154d0 !important;
     color: #fff !important;
     text-transform: none !important;
-    font-family: 'Montserrat';
-    font-weight: 500;
+    font-family: 'Josefin Sans' !important;
+    font-weight: 600 !important;
 }
 
 .reach-us-form {

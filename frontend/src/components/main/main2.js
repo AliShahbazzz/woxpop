@@ -8,6 +8,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import axios from 'axios';
 import ReachUs from '../reach-us/reach-us';
+import img from '../../assests/images/loader-3.gif';
 import './main.css';
 
 export default class Main2 extends Component {
@@ -16,7 +17,8 @@ export default class Main2 extends Component {
         super(props);
         this.child = React.createRef();
         this.state = {
-            filled: false,
+            nameFilled: false,
+            allfields: false,
             open: false,
             currBox: 0,
             result: '',
@@ -56,7 +58,7 @@ export default class Main2 extends Component {
             } else if (this.state.currBox === 1) {
                 this.onSubmit(1)
                 this.setState({
-                    filled: true,
+                    nameFilled: true,
                     open: false
                 });
             }
@@ -109,16 +111,24 @@ export default class Main2 extends Component {
                     val['id'] = res.data.id
                     this.setState({
                         values: val
-                    })
+                    }, this.calculate())
                     console.log(res.data)
                 })
                 .catch((err) => console.log(err))
         }
     }
 
+    // renderLoader () {
+    //     setTimeout(function () {
+    //         this.setState({
+    //             result: res.data.result
+    //         }, this.child.current.resValues(res.data.result))
+    //     }.bind(this), 4000)
+    // }
+
     calculate = () => {
         let val = this.state.values
-        if (this.state.filled) {
+        if (this.state.nameFilled) {
             if (val.impressions !== '' &
                 val.clicks !== '' &
                 val.cpc !== '' &
@@ -142,6 +152,7 @@ export default class Main2 extends Component {
                         total_sales: val.total_sales
                     })
                     .then((res) => {
+
                         this.setState({
                             result: res.data.result
                         }, this.child.current.resValues(res.data.result))
@@ -167,18 +178,18 @@ export default class Main2 extends Component {
 
     render() {
         let val = this.state.values
-        let disableBtn = val.name === '' || val.email === '' || val.storefront === ''
+        let disableBtn = val.name !== '' & val.email !== '' & val.storefront !== ''
+        let disableCal = this.state.result === ''
         return (
             <div className="main">
 
                 {this.state.result === '' ?
                     <div className="main-text">
                         <div className="main-text-1">
-                            Get Free Access to Projection Calculator
+                            AI powered Amazon Calculator
                     </div>
                         <div className="main-text-2">
-                            Learn how much money your Amazon Business could make in a year with the
-                        <br />right execution by an expert team.
+                            Know the potential of your Amazon business sales with the power of Artificial Intelligence.
                     </div>
                     </div> :
                     <ReachUs
@@ -188,14 +199,16 @@ export default class Main2 extends Component {
                     ref={this.child}
                     result={this.state.result}
                     updateSection={(field, val) => this.updateSection(field, val)} />
-
-                <Button
-                    variant="contained"
-                    style={styles.btn}
-                    onClick={(e) => this.calculate(e)}
-                >
-                    Calculate
+                <div className="main-calculate">
+                    <Button
+                        variant="contained"
+                        disable={!disableCal}
+                        style={disableCal ? styles.btn : styles.dbtn}
+                        onClick={(e) => this.calculate(e)}
+                    >
+                        Calculate
                 </Button>
+                </div>
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"
@@ -210,20 +223,29 @@ export default class Main2 extends Component {
                 >
                     <Fade in={this.state.open}>
                         <div style={styles.paper}>
-                            {this.renderBox()}
-                            <Button
-                                variant="contained"
-                                style={disableBtn ? styles.dbtn : styles.btn}
-                                type='submit'
-                                onClick={(e) => this.onClick('next', e)}>
-                                {this.state.currBox === 1 ? 'Done' : 'Next'}
+                            <Button className="modal-close-btn" onClick={() => this.handleClose()}>X</Button>
+                            <div className="modal-render">
+                                {this.renderBox()}
+                                <div className="modal-loader">
+                                    <img className="name-loader" src={img} alt="" />
+                                </div>
+                            </div>
+                            <div className="modal-control-btn">
+                                <Button
+                                    variant="contained"
+                                    style={this.state.currBox === 0 ? styles.dbtn : styles.btn}
+                                    onClick={(e) => this.onClick('back', e)}>
+                                    Back
                             </Button>
-                            <Button
-                                variant="contained"
-                                style={this.state.currBox === 0 ? styles.dbtn : styles.btn}
-                                onClick={(e) => this.onClick('back', e)}>
-                                Back
-                            </Button>
+                                <Button
+                                    variant="contained"
+                                    disable={disableBtn}
+                                    style={disableBtn ? styles.btn : styles.dbtn}
+                                    type='submit'
+                                    onClick={(e) => this.onClick('next', e)}>
+                                    {this.state.currBox === 1 ? 'Done' : 'Next'}
+                                </Button>
+                            </div>
                         </div>
                     </Fade>
                 </Modal>
@@ -239,20 +261,19 @@ const styles = {
         justifyContent: 'center',
     },
     paper: {
-        backgroundColor: '#ffffff',
-        padding: '2% 4%',
-        justifyContent: 'center'
+        backgroundColor: '#000000',
+        justifyContent: 'center',
+        position: 'relative',
+        borderRadius: '15px',
     },
     btn: {
-        margin: '2%',
-        backgroundColor: '#5EBC28',
+        margin: '1%',
+        backgroundColor: '#0154d0',
         color: '#ffffff',
-        float: 'right'
     },
     dbtn: {
-        margin: '2%',
-        backgroundColor: '#b4b5b3',
+        margin: '1%',
+        backgroundColor: '#828282',
         color: '#ffffff',
-        float: 'right'
     },
 }

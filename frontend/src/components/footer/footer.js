@@ -13,7 +13,6 @@ function Copyright() {
                 woxpop.com
       </Link>{' '}
             {new Date().getFullYear()}
-            {'.'}
         </Typography>
     );
 }
@@ -22,11 +21,12 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexDirection: 'column',
+        fontFamily: "museo-sans sans-serif",
     },
     footer: {
         padding: theme.spacing(2, 2),
         marginTop: 'auto',
-        backgroundColor: '#242424',
+        backgroundColor: '#000',
     },
 }));
 

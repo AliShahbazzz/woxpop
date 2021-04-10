@@ -1,9 +1,31 @@
 .header {
-    background-color: #242424;
+    background-color: inherit;
+    display: flex;
+    align-items: center;
 }
 
 .header-1 {
-    color: #5ebc28;
-    padding: 0.5% 2%;
     font-size: 2em;
+    margin: 2%;
+}
+
+.header-logo {
+    z-index: 9;
+    width: 20%;
+    cursor: pointer;
+}
+
+.header-2 {
+    font-size: 0.8em;
+    color: #ffffff;
+    display: contents;
+}
+
+.header-2 div {
+    margin: 0 3%;
+}
+
+.header-2 div:hover {
+    cursor: pointer;
+    color: #d1d1d1;
 }

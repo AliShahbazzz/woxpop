@@ -1,5 +1,9 @@
 .info {
-    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #000000;
+    padding: 5%;
+    padding-bottom: 0;
 }
 
 .info-form {
@@ -14,21 +18,37 @@
 }
 
 .info-inputs {
-    margin: 5% 0;
+    margin: 3% 0;
+    width: 80%;
 }
 
-.info-input input {
-    font-size: 1.5em;
+.info-inputs input {
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #000000;
 }
 
-.MuiFormLabel-root.Mui-focused {
-    color: #5EBC28 !important;
+.info-input label {
+    color: #6fa5f5 !important;
 }
 
-.MuiInput-underline::before {
-    border-bottom-color: #5EBC28 !important;
+.info-input.MuiFormControl-root {
+    width: 100%;
 }
 
-.MuiInput-underline::after {
-    border-bottom-color: #5EBC28 !important;
+.info-input .MuiFormLabel-root.Mui-focused {
+    color: #6fa5f5 !important;
+}
+
+.info-input .MuiInput-underline::before {
+    border-bottom-color: #6fa5f5 !important;
+}
+
+.info-input .MuiInput-underline::after {
+    border-bottom-color: #6fa5f5 !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+    color: #6fa5f5;
 }
