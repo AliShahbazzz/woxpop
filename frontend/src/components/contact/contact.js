@@ -33,7 +33,7 @@ export default class Contact extends Component {
     }
 
     onSubmit = () => {
-        axios.post('http://localhost:5000/api/home/contact/',
+        axios.post('api/home/contact/',
             {
                 name: this.state.values.name,
                 email: this.state.values.email,
