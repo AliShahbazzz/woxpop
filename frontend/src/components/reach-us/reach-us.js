@@ -33,7 +33,7 @@ export default class Reach extends Component {
     }
 
     onSubmit = () => {
-        axios.post('http://localhost:5000/api/home/addMessage/',
+        axios.post('api/home/addMessage/',
             {
                 id: this.state.values.id,
                 message: this.state.values.message,

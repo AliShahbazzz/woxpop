@@ -25,23 +25,23 @@ export default class Main2 extends Component {
             currBox: 0,
             result: '',
             values: {
-                id: 'a',
-                name: 'a',
-                email: 'a',
-                storefront: 'a',
-                marketplace: 'a',
-                category: 'a',
-                no_of_skus: '1',
-                message: '1',
-                impressions: '1',
-                clicks: '1',
-                cpc: '1',
-                ctr: '1',
-                advertising_spend: '1',
-                acos: '1',
-                advertising_order: '1',
-                total_units: '1',
-                total_sales: '1'
+                id: '',
+                name: '',
+                email: '',
+                storefront: '',
+                marketplace: '',
+                category: '',
+                no_of_skus: '',
+                message: '',
+                impressions: '',
+                clicks: '',
+                cpc: '',
+                ctr: '',
+                advertising_spend: '',
+                acos: '',
+                advertising_order: '',
+                total_units: '',
+                total_sales: ''
             },
         }
     }
@@ -85,7 +85,7 @@ export default class Main2 extends Component {
 
     onSubmit = (x) => {
         if (x === 0) {
-            axios.post('http://localhost:5000/api/home/',
+            axios.post('api/home/',
                 {
                     name: this.state.values.name,
                     email: this.state.values.email,
@@ -100,7 +100,7 @@ export default class Main2 extends Component {
                 })
                 .catch((err) => console.log(err))
         } else if (x === 1) {
-            axios.post('http://localhost:5000/api/home/addOptional/',
+            axios.post('api/home/addOptional/',
                 {
                     id: this.state.values.id,
                     marketplace: this.state.values.marketplace,
@@ -143,7 +143,7 @@ export default class Main2 extends Component {
                 val.total_units !== '' &
                 val.total_sales !== '') {
                 this.setState({ showLoader: true })
-                axios.post('http://localhost:5000/api/home/addDetails/',
+                axios.post('api/home/addDetails/',
                     {
                         id: val.id,
                         impressions: val.impressions,
@@ -161,7 +161,6 @@ export default class Main2 extends Component {
                             result: res.data.result
                         }, this.child.current.resValues(res.data.result))
                         window.scrollTo(0, 0)
-                        console.log(res.data.result)
                         setTimeout(() => {
                             this.setState({ showLoader: false })
                         }, 12000);
