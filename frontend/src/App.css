@@ -1,34 +1,91 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
-body {
-    margin: 0;
-}
-
-div, nav {
-    font-family: Monserrat;
-    padding: 0;
-    margin: 0;
-} */
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 body {
     margin: 0;
     padding: 0;
     border: 0;
     font: inherit;
-    font-family: "museo-sans", sans-serif !important;
-    color: #000000;
+    font-family: "Josefin Sans" !important;
+    color: #fff;
     line-height: 1.5;
+    /* background-color: #000000; */
+    height: 100%;
+    background: linear-gradient(to left, rgb(22, 2, 206), rgb(21, 5, 128));
+    background-size: cover;
 }
 
-/* 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #d8d8d8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(122, 122, 122);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(116, 115, 115);
+}
+
 div, nav {
-    font-family: 'Montserrat';
+    font-family: 'Josefin Sans';
     font-weight: 500;
-} */
+}
 
 a {
     outline: none;
     text-decoration: none;
+}
+
+textarea:focus, input:focus, div:focus {
+    outline: none;
+}
+
+/* .root-loader {
+    color: white;
+    background-color: #050117;
+    position: relative;
+    height: 100vh;
+}
+
+.root-loader-1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 4%;
+    width: 40%;
+}
+
+.root-loader-gif {
+    width: 100%;
+}
+
+.root-loader-2 {
+    font-size: 2em;
+    font-family: 'Josefin Sans';
+    text-align: center;
+} */
+
+.my-node-enter {
+    opacity: 0;
+}
+
+.my-node-enter-active {
+    opacity: 1;
+    transition: opacity 2000ms;
+}
+
+.my-node-exit {
+    opacity: 1;
+}
+
+.my-node-exit-active {
+    opacity: 0;
+    transition: opacity 2000ms;
 }

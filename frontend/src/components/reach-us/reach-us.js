@@ -52,14 +52,22 @@ export default class Reach extends Component {
         return (
             <div className="reach-main">
                 <div className="reach-text-1">
-                    Book a free Consulting session to know how to reach the potential
+                    <h1><p>Potential</p></h1>
+                    <p><i>Pə(ʊ)ˈtɛnʃ(ə)l</i> (adjective)</p>
+                    Having or showing the capacity to develop into something in the future.<br />
+                    "a campaign to woo potential customers"<br />
+
+                    {/* Our team of skilled Amazon advertisers and domain experts can help you reach the potential sales.
+                    We assess your requirements, conduct research, and develop custom services for your account. Book a Consulting session with us. */}
                 </div>
-                <Button
-                    className="reach-btn"
-                    onClick={() => this.btnClick()}
-                >
-                    Let's Talk
+                <div className="reach-btn-root">
+                    <Button
+                        className="reach-btn"
+                        onClick={() => this.btnClick()}
+                    >
+                        Let's Talk
                 </Button>
+                </div>
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"
@@ -137,12 +145,14 @@ const styles = {
     paper: {
         backgroundColor: '#ffffff',
         padding: '2% 4%',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        textAlign: 'center',
+        borderRadius: '15px'
     },
     btn: {
         margin: '2%',
-        backgroundColor: '#5EBC28',
+        backgroundColor: '#3840bb',
         color: '#ffffff',
-        float: 'right'
+        textAlign: 'center'
     },
 }

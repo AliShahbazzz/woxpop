@@ -1,8 +1,8 @@
 .details {
-    margin: 0;
+    margin: 5%;
     display: flex;
     justify-content: space-evenly;
-    font-family: "Roboto", sans-serif;
+    font-family: "Josefin Sans";
 }
 
 .details-form {
@@ -15,7 +15,8 @@
 }
 
 .details-heading {
-    font-size: 18px;
+    font-size: 20px;
+    font-family: 'Josefin Sans' !important;
 }
 
 .details-inputs {
@@ -35,7 +36,7 @@
     font-size: 16px;
     /* color: #5ebc28; */
     font-weight: 600;
-    font-family: 'Montserrat';
+    font-family: 'Josefin Sans';
 }
 
 .details-input input {
@@ -57,14 +58,75 @@ input[type=number] {
 }
 
 .MuiTableContainer-root {
-    width: 35% !important;
+    width: 30% !important;
     text-align: center;
+    padding: 0.8%;
+}
+
+.MuiTableContainer-root-custom {
+    width: 45% !important;
+    text-align: center;
+    padding: 0.8%;
 }
 
 .MuiTableHead-root {
     text-align: center;
+    font-weight: 700;
 }
 
-/* .MuiInputBase-input {
-    padding: 0 !important;
+.MuiTableCell-head {
+    font-family: 'Josefin Sans' !important;
+    border-radius: 15px !important;
+    font-size: 1rem;
+}
+
+.MuiPaper-rounded {
+    border-radius: 15px !important;
+}
+
+.MuiTableCell-root {
+    font-weight: 700 !important;
+    font-family: 'Josefin Sans' !important;
+}
+
+.details-input.MuiFormLabel-root.Mui-focused {
+    color: #3981ec !important;
+}
+
+.details-input.MuiInput-underline::before {
+    border-bottom-color: #3981ec !important;
+}
+
+.details-input.MuiInput-underline::after {
+    border-bottom-color: #3981ec !important;
+}
+
+/* .details-input-error.MuiFormLabel-root.Mui-focused {
+    color: #ff0000 !important;
+}
+
+.details-input-error.MuiInput-underline::before {
+    border-bottom-color: #ff0000 !important;
+}
+
+.details-input-error.MuiInput-underline::after {
+    border-bottom-color: #ff0000 !important;
 } */
+
+.projected-head {
+    padding: 8% !important;
+}
+
+.potential-head {
+    padding: 8% !important;
+}
+
+.projected-body td {
+    padding-top: 6.5% !important;
+    padding-bottom: 6.5% !important;
+}
+
+.potential-body td {
+    padding-top: 7% !important;
+    padding-bottom: 7% !important;
+}

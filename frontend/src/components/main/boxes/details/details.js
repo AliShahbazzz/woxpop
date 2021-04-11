@@ -14,6 +14,7 @@ import './details.css'
 
 
 const names = [
+    'no_of_skus',
     'impressions',
     'clicks',
     'cpc',
@@ -25,18 +26,20 @@ const names = [
     'total_sales',
 ]
 const Cnames = [
+    'Number of SKU(s)',
     'Impressions',
     'Clicks',
     'CPC',
     'CTR',
-    'Advertising Spend',
+    'Spend on Advertising',
     'ACoS',
-    'Advertising order',
-    'Total Units Sold (Ads + Organic)',
+    'Orders via Advertising',
+    'Total Units Sold via (Ads + Organic)',
     'Total Sales Revenue (Ads + Organic)',
 ]
 
 const placeholders = [
+    '15',
     '12450',
     '3540',
     '0.60',
@@ -49,10 +52,10 @@ const placeholders = [
 ]
 
 const StyledTableCell = withStyles((theme) => ({
-    // head: {
-    //     backgroundColor: theme.palette.common.black,
-    //     color: theme.palette.common.white,
-    // },
+    head: {
+        backgroundColor: "#ffffff",
+        color: "#242424",
+    },
     body: {
         fontSize: 16,
     },
@@ -74,6 +77,7 @@ class Details extends Component {
         this.state = {
             showResult: false,
             values: {
+                no_of_skus: '',
                 impressions: '',
                 clicks: '',
                 cpc: '',
@@ -111,43 +115,65 @@ class Details extends Component {
         let result = <><Projected ref={this.child1} /><Potential ref={this.child2} /></>
         return (
             <div className="details">
-                <TableContainer component={Paper} >
+                <TableContainer className={this.state.showResult ? '' : 'MuiTableContainer-root-custom'} component={Paper} >
                     <Table>
                         <TableHead>
                             <StyledTableRow>
                                 <StyledTableCell align="center" >
                                     <span className="details-heading">
-                                        <b>Current Quarter</b>
+                                        <b>Reached</b>
                                     </span>
                                 </StyledTableCell>
                             </StyledTableRow>
                             <StyledTableRow>
                                 <StyledTableCell
                                     align="center"
-                                // style={{ 'color': '#5ebc28' }}
-                                ><b>Q1</b></StyledTableCell>
+                                ><b>Quarter 1<br />Jan 2021 - Mar 2021</b></StyledTableCell>
                             </StyledTableRow>
                         </TableHead>
                         <TableBody>
                             {names.map((row) => (
-                                <StyledTableRow key={row}>
-                                    <StyledTableCell align="center">
-                                        <div className="details-inputs">
-                                            <span className="details-input-span" >
-                                                {Cnames[names.indexOf(row)]}
-                                            </span>
-                                            <Input
-                                                className="details-input"
-                                                placeholder={placeholders[names.indexOf(row)]}
-                                                required
-                                                id={row}
-                                                key={row}
-                                                type="number"
-                                                onChange={(e) => this.onChange(row, e)}
-                                            />
-                                        </div>
-                                    </StyledTableCell>
-                                </StyledTableRow>
+                                this.state.showResult ? (
+                                    row !== 'no_of_skus' ?
+                                        <StyledTableRow key={row}>
+                                            <StyledTableCell align="center">
+                                                <div className="details-inputs">
+                                                    <span className="details-input-span" >
+                                                        {Cnames[names.indexOf(row)]}
+                                                    </span>
+                                                    <Input
+                                                        className="details-input"
+                                                        style={{ "width": "50%" }}
+                                                        placeholder={placeholders[names.indexOf(row)]}
+                                                        disabled={this.state.showResult}
+                                                        required
+                                                        id={row}
+                                                        key={row}
+                                                        type="number"
+                                                        onChange={(e) => this.onChange(row, e)}
+                                                    />
+                                                </div>
+                                            </StyledTableCell>
+                                        </StyledTableRow> : null) :
+                                    <StyledTableRow key={row}>
+                                        <StyledTableCell align="center">
+                                            <div className="details-inputs">
+                                                <span className="details-input-span" >
+                                                    {Cnames[names.indexOf(row)]}
+                                                </span>
+                                                <Input
+                                                    className="details-input"
+                                                    style={{ "width": "50%" }}
+                                                    placeholder={placeholders[names.indexOf(row)]}
+                                                    required
+                                                    id={row}
+                                                    key={row}
+                                                    type="number"
+                                                    onChange={(e) => this.onChange(row, e)}
+                                                />
+                                            </div>
+                                        </StyledTableCell>
+                                    </StyledTableRow>
                             ))}
                         </TableBody>
                     </Table>

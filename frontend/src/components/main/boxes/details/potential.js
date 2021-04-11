@@ -22,10 +22,10 @@ const names = [
 ]
 
 const StyledTableCell = withStyles((theme) => ({
-    // head: {
-    //     backgroundColor: theme.palette.common.black,
-    //     color: theme.palette.common.white,
-    // },
+    head: {
+        backgroundColor: "#5ebc28",
+        color: "#242424",
+    },
     body: {
         fontSize: 16,
     },
@@ -73,18 +73,18 @@ export default class Potential extends Component {
                     <TableHead>
                         <StyledTableRow>
                             <StyledTableCell colSpan={3} align="center" >
-                                <span style={{ 'fontSize': '18px' }}>
+                                <span style={{ 'fontSize': '20px' }}>
                                     <b>Potential</b>
                                 </span>
                             </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                            <StyledTableCell align="right"><b>Q2</b></StyledTableCell>
-                            <StyledTableCell align="right"><b>Q3</b></StyledTableCell>
-                            <StyledTableCell align="right"><b>Q4</b></StyledTableCell>
+                            <StyledTableCell className="potential-head" align="right"><b>Q2</b></StyledTableCell>
+                            <StyledTableCell className="potential-head" align="right"><b>Q3</b></StyledTableCell>
+                            <StyledTableCell className="potential-head" align="right"><b>Q4</b></StyledTableCell>
                         </StyledTableRow>
                     </TableHead>
-                    <TableBody>
+                    <TableBody className="potential-body">
                         {names.map((row) => (
                             <StyledTableRow key={row}>
                                 <StyledTableCell align="right">{this.state.values[row].Q2}</StyledTableCell>
