@@ -39,12 +39,11 @@ class Name extends Component {
                 <form className="name-form">
                     <div className="name-inner">
                         <div className="name-text-1">
-                            Your details are safe and secure.
-                            
-                            The AI tool will not spam you.
+                            Fill in your details. The analysis will be shared to your email address.<br />
+                            <small>Your details are safe and secure. This AI Tool will not span your inbox</small>
                         </div>
                         <div className="name-inputs">
-                            
+
                             {/* <Form.Control type="email" placeholder="Enter email" /> */}
                             <Form.Label>Name</Form.Label>
                             <Form.Control

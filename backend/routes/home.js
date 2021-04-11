@@ -53,7 +53,7 @@ router.post('/addOptional', (req, res) => {
                 message: 'Updated',
                 id: id
             }))
-            .catch(err => res.status(404).json({ success: false, error: err }))
+            .catch((err) => res.status(404).json({ success: false, error: err }))
     }
 })
 router.post('/addDetails', (req, res) => {
@@ -88,7 +88,7 @@ router.post('/addDetails', (req, res) => {
             message: 'Updated',
             result: calculate(body)
         }))
-        .catch(err => res.status(404).json({ success: false, error: err }))
+        .catch((err) => res.status(404).json({ error: err }))
 })
 
 router.post('/addMessage', (req, res) => {
@@ -107,7 +107,7 @@ router.post('/addMessage', (req, res) => {
                 message: 'Updated',
                 id: id
             }))
-            .catch(err => res.status(404).json({ success: false, error: err }))
+            .catch((err) => res.status(404).json({ error: err }))
     }
 })
 

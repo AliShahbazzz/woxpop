@@ -6,26 +6,32 @@ import Header from './components/header/header';
 import Home from './components/home/home';
 import Analyze from './components/main/main2';
 import Contact from './components/contact/contact';
-import Loader from './components/loader/loader';
+import img from './assests/images/1.gif';
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      show: 0
+      show: 0,
+      intro: true
     }
   }
   arr = [
-    <Home />,
+    <Home onclick={() => this.showAnalyze()} />,
     <Analyze />,
     <Contact closeContact={() => this.closeContact()} />,
     // <AboutUs />
   ]
-  // componentDidMount() {
-  //   setTimeout(function () { //Start the timer
-  //     this.setState({ renderNow: true }) //After 1 second, set render to true
-  //   }.bind(this), 4000)
-  // }
+  componentDidMount() {
+    setTimeout(function () {
+      this.setState({ intro: false })
+    }.bind(this), 2500)
+  }
+  showAnalyze = () => {
+    this.setState({
+      show: 1
+    })
+  }
   closeContact = () => {
     this.setState({
       show: 0
@@ -52,15 +58,19 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <Header
-          toHome={() => this.togglePage('home')}
-          toAnalyze={() => this.togglePage('analyze')}
-          toContact={() => this.togglePage('contact')}
-          toAbout={() => this.togglePage('about')}
-        />
-        {this.arr[this.state.show]}
-      </div>
+      this.state.intro ?
+        <div className="App-intro">
+          <img className="App-intro-loader" src={img} alt="" />
+        </div> :
+        <div className="App">
+          <Header
+            toHome={() => this.togglePage('home')}
+            toAnalyze={() => this.togglePage('analyze')}
+            toContact={() => this.togglePage('contact')}
+            toAbout={() => this.togglePage('about')}
+          />
+          {this.arr[this.state.show]}
+        </div>
     );
   }
 }

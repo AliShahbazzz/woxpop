@@ -13,7 +13,7 @@ body {
     line-height: 1.5;
     /* background-color: #000000; */
     height: 100%;
-    background: linear-gradient(to left, rgb(22, 2, 206), rgb(21, 5, 128));
+    background: linear-gradient(to right, rgb(5, 3, 68), rgb(2, 3, 99));
     background-size: cover;
 }
 
@@ -47,6 +47,26 @@ textarea:focus, input:focus, div:focus {
     outline: none;
 }
 
+.App-intro {
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    height: 40vmin;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+    background-color: #050117;
+}
+
+.App-intro-loader {
+    height: 50%;
+}
+
 /* .root-loader {
     color: white;
     background-color: #050117;
@@ -71,21 +91,3 @@ textarea:focus, input:focus, div:focus {
     font-family: 'Josefin Sans';
     text-align: center;
 } */
-
-.my-node-enter {
-    opacity: 0;
-}
-
-.my-node-enter-active {
-    opacity: 1;
-    transition: opacity 2000ms;
-}
-
-.my-node-exit {
-    opacity: 1;
-}
-
-.my-node-exit-active {
-    opacity: 0;
-    transition: opacity 2000ms;
-}
