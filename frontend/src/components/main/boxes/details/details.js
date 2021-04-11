@@ -30,9 +30,9 @@ const Cnames = [
     'Impressions',
     'Clicks',
     'CPC',
-    'CTR',
+    'CTR(%)',
     'Spend on Advertising',
-    'ACoS',
+    'ACoS(%)',
     'Orders via Advertising',
     'Total Units Sold via (Ads + Organic)',
     'Total Sales Revenue (Ads + Organic)',
@@ -43,9 +43,9 @@ const placeholders = [
     '12450',
     '3540',
     '0.60',
-    '0.35',
+    '0.35%',
     '5000',
-    '50',
+    '50%',
     '500',
     '1000',
     '10000',
@@ -54,7 +54,7 @@ const placeholders = [
 const StyledTableCell = withStyles((theme) => ({
     head: {
         backgroundColor: "#ffffff",
-        color: "#242424",
+        color: "#000000",
     },
     body: {
         fontSize: 16,
@@ -112,7 +112,11 @@ class Details extends Component {
     }
 
     render() {
-        let result = <><Projected ref={this.child1} /><Potential ref={this.child2} /></>
+        let result = <>
+            <span className="details-result-text-1">This is where you will reach with your current projections</span>
+            <Projected ref={this.child1} />
+            <span className="details-result-text-2">You can only reach your potential with advanced strategies. Our Expert team can help you</span>
+            <Potential ref={this.child2} /></>
         return (
             <div className="details">
                 <TableContainer className={this.state.showResult ? '' : 'MuiTableContainer-root-custom'} component={Paper} >

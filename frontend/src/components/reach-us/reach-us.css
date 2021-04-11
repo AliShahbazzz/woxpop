@@ -1,32 +1,36 @@
 .reach-text-1 {
     font-size: 1.1em;
     margin-bottom: 1%;
-    font-weight: 600;
     color: #fff;
     font-family: 'Josefin Sans';
     text-align: center;
 }
 
+.reach-text-1 p {
+    font-weight: 600;
+}
+
 .reach-text-2 {
     font-size: 1.5em;
     margin-bottom: 1%;
-    font-weight: 600;
     color: #000000;
     font-family: 'Josefin Sans';
 }
 
 .reach-btn-root {
     display: flex;
-    margin-right: 5%;
+    margin-right: 14%;
+    margin-bottom: 8%;
     justify-content: flex-end;
 }
 
 .reach-btn {
-    background-color: #0154d0 !important;
-    color: #fff !important;
+    background-color: #5ebc28 !important;
+    color: #000000 !important;
     text-transform: none !important;
     font-family: 'Josefin Sans' !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
+    padding: 0.5% 5% !important;
 }
 
 .reach-us-form {

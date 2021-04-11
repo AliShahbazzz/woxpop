@@ -1,10 +1,12 @@
 .home-root {
     margin: auto;
+    color: #fff !important;
 }
 
 .home-text {
     width: 45%;
-    margin: 8% 5%;
+    margin: 7% 5%;
+    color: #fff !important;
 }
 
 .home-text-1 {
@@ -14,5 +16,14 @@
 
 .home-text-2 {
     font-size: 1em;
-    text-transform: uppercase;
+}
+
+.home-button {
+    background-color: #0502b8 !important;
+    color: #fff !important;
+    text-transform: none !important;
+    font-size: 0.8em !important;
+    font-family: inherit !important;
+    margin-top: -8% !important;
+    margin-left: 38% !important;
 }

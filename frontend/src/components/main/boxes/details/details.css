@@ -101,18 +101,6 @@ input[type=number] {
     border-bottom-color: #3981ec !important;
 }
 
-/* .details-input-error.MuiFormLabel-root.Mui-focused {
-    color: #ff0000 !important;
-}
-
-.details-input-error.MuiInput-underline::before {
-    border-bottom-color: #ff0000 !important;
-}
-
-.details-input-error.MuiInput-underline::after {
-    border-bottom-color: #ff0000 !important;
-} */
-
 .projected-head {
     padding: 8% !important;
 }
@@ -129,4 +117,19 @@ input[type=number] {
 .potential-body td {
     padding-top: 7% !important;
     padding-bottom: 7% !important;
+}
+
+.details-result-text-1 {
+    position: absolute;
+    margin-top: -5%;
+    width: 25%;
+    text-align: center;
+}
+
+.details-result-text-2 {
+    position: absolute;
+    margin-top: -6%;
+    margin-right: -55%;
+    width: 25%;
+    text-align: center;
 }
