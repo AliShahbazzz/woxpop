@@ -147,7 +147,8 @@ const styles = {
         backgroundColor: '#ffffff',
         padding: '2% 4%',
         justifyContent: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+        borderRadius: '15px'
     },
     btn: {
         margin: '2%',

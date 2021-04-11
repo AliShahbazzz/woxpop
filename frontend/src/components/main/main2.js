@@ -9,6 +9,7 @@ import Fade from '@material-ui/core/Fade';
 import axios from 'axios';
 import ReachUs from '../reach-us/reach-us';
 import img from '../../assests/images/loader-3.gif';
+import Loader from '../loader/loader';
 import './main.css';
 
 export default class Main2 extends Component {
@@ -17,29 +18,30 @@ export default class Main2 extends Component {
         super(props);
         this.child = React.createRef();
         this.state = {
+            showLoader: false,
             nameFilled: false,
             allfields: false,
             open: false,
             currBox: 0,
             result: '',
             values: {
-                id: '',
-                name: '',
-                email: '',
-                storefront: '',
-                marketplace: '',
-                category: '',
-                no_of_skus: '',
-                message: '',
-                impressions: '',
-                clicks: '',
-                cpc: '',
-                ctr: '',
-                advertising_spend: '',
-                acos: '',
-                advertising_order: '',
-                total_units: '',
-                total_sales: ''
+                id: 'a',
+                name: 'a',
+                email: 'a',
+                storefront: 'a',
+                marketplace: 'a',
+                category: 'a',
+                no_of_skus: '1',
+                message: '1',
+                impressions: '1',
+                clicks: '1',
+                cpc: '1',
+                ctr: '1',
+                advertising_spend: '1',
+                acos: '1',
+                advertising_order: '1',
+                total_units: '1',
+                total_sales: '1'
             },
         }
     }
@@ -118,12 +120,16 @@ export default class Main2 extends Component {
         }
     }
 
-    // renderLoader () {
-    //     setTimeout(function () {
-    //         this.setState({
-    //             result: res.data.result
-    //         }, this.child.current.resValues(res.data.result))
-    //     }.bind(this), 4000)
+    // renderLoader() {
+    //     if (this.state.showLoader) {
+    //         setTimeout(() => {
+    //             this.setState({ showLoader: false })
+    //         }, 15000);
+    //         console.log(this.state.showLoader)
+    //         return <Loader />
+    //     } else {
+    //         return null
+    //     }
     // }
 
     calculate = () => {
@@ -138,6 +144,7 @@ export default class Main2 extends Component {
                 val.advertising_order !== '' &
                 val.total_units !== '' &
                 val.total_sales !== '') {
+                this.setState({ showLoader: true })
                 axios.post('http://localhost:5000/api/home/addDetails/',
                     {
                         id: val.id,
@@ -152,12 +159,14 @@ export default class Main2 extends Component {
                         total_sales: val.total_sales
                     })
                     .then((res) => {
-
                         this.setState({
                             result: res.data.result
                         }, this.child.current.resValues(res.data.result))
-                        console.log(res.data.result)
                         window.scrollTo(0, 0)
+                        console.log(res.data.result)
+                        setTimeout(() => {
+                            this.setState({ showLoader: false })
+                        }, 12000);
                     })
                     .catch((err) => console.log(err))
             } else {
@@ -182,7 +191,7 @@ export default class Main2 extends Component {
         let disableCal = this.state.result === ''
         return (
             <div className="main">
-
+                {this.state.showLoader ? <Loader /> : null}
                 {this.state.result === '' ?
                     <div className="main-text">
                         <div className="main-text-1">
@@ -199,16 +208,17 @@ export default class Main2 extends Component {
                     ref={this.child}
                     result={this.state.result}
                     updateSection={(field, val) => this.updateSection(field, val)} />
-                <div className="main-calculate">
-                    <Button
-                        variant="contained"
-                        disable={!disableCal}
-                        style={disableCal ? styles.btn : styles.dbtn}
-                        onClick={(e) => this.calculate(e)}
-                    >
-                        Calculate
+                {disableCal ?
+                    <div className="main-calculate">
+                        <Button
+                            variant="contained"
+                            disabled={!disableCal}
+                            style={disableCal ? styles.btn : styles.dbtn}
+                            onClick={(e) => this.calculate(e)}
+                        >
+                            Calculate
                 </Button>
-                </div>
+                    </div> : null}
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"

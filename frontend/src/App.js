@@ -6,6 +6,7 @@ import Header from './components/header/header';
 import Home from './components/home/home';
 import Analyze from './components/main/main2';
 import Contact from './components/contact/contact';
+import Loader from './components/loader/loader';
 
 export default class App extends Component {
   constructor(props) {
