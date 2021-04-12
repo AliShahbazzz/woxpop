@@ -86,7 +86,7 @@ export default class Projected extends Component {
                     </TableHead>
                     <TableBody className="projected-body">
                         {names.map((row) => (
-                            <StyledTableRow key={row}>
+                            <StyledTableRow key={row} className={row === "total_units" || row === "total_sales" || row === "advertising_order" ? "details-small-padding" : ""}>
                                 <StyledTableCell align="right">{this.state.values[row].Q2}</StyledTableCell>
                                 <StyledTableCell align="right">{this.state.values[row].Q3}</StyledTableCell>
                                 <StyledTableCell align="right">{this.state.values[row].Q4}</StyledTableCell>

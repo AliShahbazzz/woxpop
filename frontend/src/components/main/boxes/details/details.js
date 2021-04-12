@@ -113,9 +113,7 @@ class Details extends Component {
 
     render() {
         let result = <>
-            <span className="details-result-text-1">This is where you will reach with your current projections</span>
             <Projected ref={this.child1} />
-            <span className="details-result-text-2">You can only reach your potential with advanced strategies. Our Expert team can help you</span>
             <Potential ref={this.child2} /></>
         return (
             <div className="details">

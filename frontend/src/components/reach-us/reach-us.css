@@ -18,19 +18,25 @@
 }
 
 .reach-btn-root {
-    display: flex;
-    margin-right: 14%;
-    margin-bottom: 8%;
-    justify-content: flex-end;
+    display: block;
+    text-align: right;
+}
+
+.reach-text-3 {
+    width: 30%;
+    text-align: center;
+    margin-left: 65%;
 }
 
 .reach-btn {
+    margin-top: 1% !important;
+    margin-right: 13% !important;
     background-color: #5ebc28 !important;
     color: #000000 !important;
     text-transform: none !important;
     font-family: 'Josefin Sans' !important;
     font-weight: 700 !important;
-    padding: 0.5% 5% !important;
+    padding: 0.5% 4% !important;
 }
 
 .reach-us-form {

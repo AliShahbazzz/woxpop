@@ -13,7 +13,8 @@ export default class App extends Component {
     super(props)
     this.state = {
       show: 0,
-      intro: true
+      intro: true,
+      screenWidth: 1080,
     }
   }
   arr = [
@@ -22,7 +23,13 @@ export default class App extends Component {
     <Contact closeContact={() => this.closeContact()} />,
     // <AboutUs />
   ]
+  //Function to update the state whether width is greater than 720 (true/false)
+  setWidth() {
+    this.setState({ screenWidth: window.innerWidth >= 760 });
+  }
   componentDidMount() {
+    this.setWidth();
+    window.addEventListener("resize", this.setWidth.bind(this));
     setTimeout(function () {
       this.setState({ intro: false })
     }.bind(this), 2500)
@@ -56,21 +63,24 @@ export default class App extends Component {
       })
     }
   }
+
   render() {
     return (
       this.state.intro ?
         <div className="App-intro">
           <img className="App-intro-loader" src={img} alt="" />
         </div> :
-        <div className="App">
-          <Header
-            toHome={() => this.togglePage('home')}
-            toAnalyze={() => this.togglePage('analyze')}
-            toContact={() => this.togglePage('contact')}
-            toAbout={() => this.togglePage('about')}
-          />
-          {this.arr[this.state.show]}
-        </div>
+        (this.state.screenWidth) ?
+          <div className="App">
+            <Header
+              toHome={() => this.togglePage('home')}
+              toAnalyze={() => this.togglePage('analyze')}
+              toContact={() => this.togglePage('contact')}
+              toAbout={() => this.togglePage('about')}
+            />
+            {this.arr[this.state.show]}
+          </div>
+          : <div className='MobileError'>This Page isn't supported for mobile devices</div>
     );
   }
 }
