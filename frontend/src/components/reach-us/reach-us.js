@@ -62,12 +62,15 @@ export default class Reach extends Component {
                     We assess your requirements, conduct research, and develop custom services for your account. Book a Consulting session with us. */}
                 </div>
                 <div className="reach-btn-root">
+                    <div className="reach-text-3">
+                        You can only reach your potential with advanced strategies. Our Expert team can help you
+                    </div>
                     <Button
                         className="reach-btn"
                         onClick={() => this.btnClick()}
                     >
                         Let's Talk
-                </Button>
+                        </Button>
                 </div>
                 <Modal
                     aria-labelledby="transition-modal-title"

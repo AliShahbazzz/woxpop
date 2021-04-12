@@ -1,8 +1,18 @@
 .details {
-    margin: 5%;
+    margin: 3%;
     display: flex;
     justify-content: space-evenly;
     font-family: "Josefin Sans";
+}
+
+.details td {
+    padding-top: 7% !important;
+    padding-bottom: 7% !important;
+}
+
+.details-small-padding td {
+    padding-top: 10% !important;
+    padding-bottom: 10% !important;
 }
 
 .details-form {
@@ -69,6 +79,11 @@ input[type=number] {
     padding: 0.8%;
 }
 
+.MuiTableContainer-root-custom td {
+    padding-top: 6% !important;
+    padding-bottom: 6% !important;
+}
+
 .MuiTableHead-root {
     text-align: center;
     font-weight: 700;
@@ -109,27 +124,9 @@ input[type=number] {
     padding: 8% !important;
 }
 
-.projected-body td {
-    padding-top: 6.5% !important;
-    padding-bottom: 6.5% !important;
-}
-
-.potential-body td {
-    padding-top: 7% !important;
-    padding-bottom: 7% !important;
-}
-
 .details-result-text-1 {
     position: absolute;
     margin-top: -5%;
-    width: 25%;
-    text-align: center;
-}
-
-.details-result-text-2 {
-    position: absolute;
-    margin-top: -6%;
-    margin-right: -55%;
     width: 25%;
     text-align: center;
 }

@@ -67,6 +67,17 @@ textarea:focus, input:focus, div:focus {
     height: 50%;
 }
 
+.MobileError {
+    min-height: 800px;
+    text-align: center;
+    justify-self: center;
+    font-size: 2em;
+    padding-top: 350px;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+}
+
 /* .root-loader {
     color: white;
     background-color: #050117;
