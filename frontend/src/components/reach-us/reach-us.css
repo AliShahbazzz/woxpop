@@ -13,7 +13,7 @@
 .reach-text-2 {
     font-size: 1.5em;
     margin-bottom: 1%;
-    color: #000000;
+    color: #059b00;
     font-family: 'Josefin Sans';
 }
 
@@ -31,7 +31,7 @@
 .reach-btn {
     margin-top: 1% !important;
     margin-right: 13% !important;
-    background-color: #5ebc28 !important;
+    background-color: #18b362 !important;
     color: #000000 !important;
     text-transform: none !important;
     font-family: 'Josefin Sans' !important;
@@ -59,4 +59,20 @@
 .reach-us-input {
     font-size: 1em;
     width: 100%;
+}
+
+.reach-us-input .MuiFormLabel-root.Mui-focused {
+    color: #18b362 !important;
+}
+
+.reach-us-input .MuiInput-underline::before {
+    border-bottom-color: #18b362 !important;
+}
+
+.reach-us-input .MuiInput-underline::after {
+    border-bottom-color: #18b362 !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+    color: #18b362;
 }

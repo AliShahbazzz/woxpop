@@ -2,7 +2,7 @@
     margin: 3%;
     display: flex;
     justify-content: space-evenly;
-    font-family: "Josefin Sans";
+    font-family: inherit;
 }
 
 .details td {
@@ -10,9 +10,15 @@
     padding-bottom: 7% !important;
 }
 
+.details-padding .details-input-span {
+    /* padding-top: 7% !important;
+    padding-bottom: 7% !important; */
+    font-size: 1em !important;
+}
+
 .details-small-padding td {
-    padding-top: 10% !important;
-    padding-bottom: 10% !important;
+    padding-top: 7% !important;
+    padding-bottom: 7% !important;
 }
 
 .details-form {
@@ -26,7 +32,7 @@
 
 .details-heading {
     font-size: 20px;
-    font-family: 'Josefin Sans' !important;
+    font-family: inherit !important;
 }
 
 .details-inputs {
@@ -46,7 +52,7 @@
     font-size: 16px;
     /* color: #5ebc28; */
     font-weight: 600;
-    font-family: 'Josefin Sans';
+    font-family: inherit;
 }
 
 .details-input input {
@@ -90,7 +96,7 @@ input[type=number] {
 }
 
 .MuiTableCell-head {
-    font-family: 'Josefin Sans' !important;
+    font-family: inherit !important;
     border-radius: 15px !important;
     font-size: 1rem;
 }
@@ -101,27 +107,27 @@ input[type=number] {
 
 .MuiTableCell-root {
     font-weight: 700 !important;
-    font-family: 'Josefin Sans' !important;
+    font-family: inherit !important;
 }
 
 .details-input.MuiFormLabel-root.Mui-focused {
-    color: #3981ec !important;
+    color: #18b362 !important;
 }
 
 .details-input.MuiInput-underline::before {
-    border-bottom-color: #3981ec !important;
+    border-bottom-color: #18b362 !important;
 }
 
 .details-input.MuiInput-underline::after {
-    border-bottom-color: #3981ec !important;
+    border-bottom-color: #18b362 !important;
 }
 
 .projected-head {
-    padding: 8% !important;
+    padding: 28px !important;
 }
 
 .potential-head {
-    padding: 8% !important;
+    padding: 28px !important;
 }
 
 .details-result-text-1 {

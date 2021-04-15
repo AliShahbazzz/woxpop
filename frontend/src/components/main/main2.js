@@ -278,12 +278,12 @@ const styles = {
     },
     btn: {
         margin: '1%',
-        backgroundColor: '#0154d0',
+        backgroundColor: '#18b362',
         color: '#ffffff',
     },
     dbtn: {
         margin: '1%',
-        backgroundColor: '#828282',
+        backgroundColor: '#6abd92',
         color: '#ffffff',
     },
 }

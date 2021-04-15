@@ -8,7 +8,7 @@
 
 .name-text-1 {
     font-size: 1.2em;
-    color: #6fa5f5;
+    color: #38f192;
     margin-bottom: 5%;
     text-align: center;
 }
@@ -41,7 +41,7 @@
 }
 
 /* .name-inputs label {
-    color: #6fa5f5 !important;
+    color: #18b362 !important;
 } */
 
 .name-input.MuiFormControl-root {
@@ -49,17 +49,17 @@
 }
 
 .name-input .MuiFormLabel-root.Mui-focused {
-    color: #6fa5f5 !important;
+    color: #18b362 !important;
 }
 
 .name-input .MuiInput-underline::before {
-    border-bottom-color: #6fa5f5 !important;
+    border-bottom-color: #18b362 !important;
 }
 
 .name-input .MuiInput-underline::after {
-    border-bottom-color: #6fa5f5 !important;
+    border-bottom-color: #18b362 !important;
 }
 
 .MuiOutlinedInput-notchedOutline {
-    color: #6fa5f5;
+    color: #18b362;
 }

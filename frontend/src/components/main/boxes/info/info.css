@@ -30,7 +30,7 @@
 }
 
 .info-input label {
-    color: #6fa5f5 !important;
+    color: #18b362 !important;
 }
 
 .info-input.MuiFormControl-root {
@@ -38,17 +38,17 @@
 }
 
 .info-input .MuiFormLabel-root.Mui-focused {
-    color: #6fa5f5 !important;
+    color: #18b362 !important;
 }
 
 .info-input .MuiInput-underline::before {
-    border-bottom-color: #6fa5f5 !important;
+    border-bottom-color: #18b362 !important;
 }
 
 .info-input .MuiInput-underline::after {
-    border-bottom-color: #6fa5f5 !important;
+    border-bottom-color: #18b362 !important;
 }
 
 .MuiOutlinedInput-notchedOutline {
-    color: #6fa5f5;
+    color: #18b362;
 }
