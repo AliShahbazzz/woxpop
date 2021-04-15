@@ -137,7 +137,7 @@ class Details extends Component {
                             {names.map((row) => (
                                 this.state.showResult ? (
                                     row !== 'no_of_skus' ?
-                                        <StyledTableRow key={row}>
+                                        <StyledTableRow key={row} className={row === "total_units" || row === "total_sales" || row === "advertising_order" ? "details-padding" : ""}>
                                             <StyledTableCell align="center">
                                                 <div className="details-inputs">
                                                     <span className="details-input-span" >
@@ -157,7 +157,7 @@ class Details extends Component {
                                                 </div>
                                             </StyledTableCell>
                                         </StyledTableRow> : null) :
-                                    <StyledTableRow key={row}>
+                                    <StyledTableRow key={row} className={row === "total_units" || row === "total_sales" || row === "advertising_order" ? "details-small-padding" : ""}>
                                         <StyledTableCell align="center">
                                             <div className="details-inputs">
                                                 <span className="details-input-span" >
@@ -180,9 +180,7 @@ class Details extends Component {
                         </TableBody>
                     </Table>
                 </TableContainer >
-                {this.state.showResult ?
-                    result
-                    : null}
+                {this.state.showResult ? result : null}
             </div>
         );
     }

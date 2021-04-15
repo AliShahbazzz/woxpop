@@ -12,20 +12,20 @@
 .main-text-1 {
     font-size: 2.5em;
     font-weight: 600;
-    font-family: 'Josefin Sans';
+    font-family: inherit;
 }
 
 .main-text-2 {
     font-size: 1.2em;
-    font-family: 'Josefin Sans';
-    color: #6fa5f5;
+    font-family: inherit;
+    color: #38f192;
 }
 
 .modal-close-btn {
     position: absolute !important;
     float: right;
     right: 0;
-    color: #6fa5f5 !important;
+    color: #18b362 !important;
     font-size: 1em !important;
 }
 

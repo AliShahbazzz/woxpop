@@ -23,7 +23,7 @@ const names = [
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-        backgroundColor: "#68a4ff",
+        backgroundColor: "#3498db",
         color: "#000000",
     },
     body: {

@@ -126,13 +126,13 @@ const styles = {
     },
     btn: {
         margin: '2%',
-        backgroundColor: '#3840bb',
+        backgroundColor: '#18b362',
         color: '#ffffff',
         textAlign: 'center'
     },
     dbtn: {
         margin: '2%',
-        backgroundColor: '#6973fc',
+        backgroundColor: '#6abd92',
         color: '#ffffff',
         textAlign: 'center'
     },

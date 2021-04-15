@@ -154,7 +154,7 @@ const styles = {
     },
     btn: {
         margin: '2%',
-        backgroundColor: '#3840bb',
+        backgroundColor: '#18b362',
         color: '#ffffff',
         textAlign: 'center'
     },

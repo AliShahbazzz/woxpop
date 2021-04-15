@@ -58,9 +58,10 @@ export default class App extends Component {
         show: 2
       })
     } else if (page === 'about') {
-      this.setState({
-        show: 3
-      })
+      // this.setState({
+      //   show: 3
+      // })
+      return
     }
   }
 
