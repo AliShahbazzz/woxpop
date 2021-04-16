@@ -11,14 +11,8 @@
 }
 
 .details-padding .details-input-span {
-    /* padding-top: 7% !important;
-    padding-bottom: 7% !important; */
     font-size: 1em !important;
-}
-
-.details-small-padding td {
-    padding-top: 7% !important;
-    padding-bottom: 7% !important;
+    line-height: 2 !important;
 }
 
 .details-form {
@@ -53,11 +47,16 @@
     /* color: #5ebc28; */
     font-weight: 600;
     font-family: inherit;
+    width: 80%;
 }
 
 .details-input input {
     padding: 0 !important;
     text-decoration: none;
+}
+
+.details-total {
+    font-size: 1.4em !important;
 }
 
 /* Chrome, Safari, Edge, Opera */
