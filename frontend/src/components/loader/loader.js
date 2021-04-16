@@ -29,34 +29,17 @@ class Loader extends Component {
     componentWillUnmount() {
         clearInterval(this.change);
     }
-    renderOne() {
-        return <div>
-            <img src={img1} className="loader-img-1" alt="" />
-            <p>Scanning your Store...</p>
-        </div>
-    }
-    renderTwo() {
-        return <div>
-            <img src={img2} className="loader-img-2" alt="" />
-            <p>Analysing Amazon Marketplace...</p>
-        </div>
-    }
-    renderThree() {
-        return <div>
-            <img src={img3} className="loader-img-3" alt="" />
-            <p>Caliberating Customer Behaviour patterns...</p>
-        </div>
-    }
-    arr = [
-        this.renderOne(),
-        this.renderTwo(),
-        this.renderThree()
-    ]
+    arrImg = [img1, img2, img3]
+    arrQuote = ['Scanning your Store...', 'Analyzing Amazon Marketplace...', 'Caliberating Customer Behaviour patterns...']
+
     render() {
         return (
             <Fade in={true}>
                 <div className="loader-root">
-                    {this.arr[this.state.show]}
+                    <div>
+                        <img src={this.arrImg[this.state.show]} key={this.arrImg[this.state.show]} className={`loader-img-${this.state.show + 1}`} alt="" />
+                        <p>{this.arrQuote[this.state.show]}</p>
+                    </div>
                 </div>
             </Fade>
         );

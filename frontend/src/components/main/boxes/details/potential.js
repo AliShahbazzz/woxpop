@@ -18,7 +18,8 @@ const names = [
     'acos',
     'advertising_order',
     'total_units',
-    'total_sales'
+    'total_sales',
+    'total'
 ]
 
 const StyledTableCell = withStyles((theme) => ({
@@ -53,7 +54,8 @@ export default class Potential extends Component {
                 acos: { Q2: 0, Q3: 0, Q4: 0 },
                 advertising_order: { Q2: 0, Q3: 0, Q4: 0 },
                 total_units: { Q2: 0, Q3: 0, Q4: 0 },
-                total_sales: { Q2: 0, Q3: 0, Q4: 0 }
+                total_sales: { Q2: 0, Q3: 0, Q4: 0 },
+                total: 0
             }
         }
     }
@@ -64,6 +66,8 @@ export default class Potential extends Component {
             val[names[i]] = newVal
             this.setState({ values: val })
         }
+        val['total'] = val['total_sales'].Q2 + val['total_sales'].Q3 + val['total_sales'].Q4
+        this.setState({ values: val })
     }
 
     render() {
@@ -86,11 +90,17 @@ export default class Potential extends Component {
                     </TableHead>
                     <TableBody className="potential-body">
                         {names.map((row) => (
-                            <StyledTableRow key={row} className={row === "total_units" || row === "total_sales" || row === "advertising_order" ? "details-small-padding" : ""}>
-                                <StyledTableCell align="right">{this.state.values[row].Q2}</StyledTableCell>
-                                <StyledTableCell align="right">{this.state.values[row].Q3}</StyledTableCell>
-                                <StyledTableCell align="right">{this.state.values[row].Q4}</StyledTableCell>
-                            </StyledTableRow>
+                            row !== 'total' ?
+                                <StyledTableRow key={row}>
+                                    <StyledTableCell align="right">{this.state.values[row].Q2}</StyledTableCell>
+                                    <StyledTableCell align="right">{this.state.values[row].Q3}</StyledTableCell>
+                                    <StyledTableCell align="right">{this.state.values[row].Q4}</StyledTableCell>
+                                </StyledTableRow> :
+                                <StyledTableRow key={row}>
+                                    <StyledTableCell align="right">Total: </StyledTableCell>
+                                    <StyledTableCell align="right" className="details-total">{this.state.values[row]}</StyledTableCell>
+                                    <StyledTableCell align="right"></StyledTableCell>
+                                </StyledTableRow>
                         ))}
                     </TableBody>
                 </Table>

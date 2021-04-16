@@ -198,7 +198,7 @@ export default class Main2 extends Component {
                             AI powered Amazon Calculator
                     </div>
                         <div className="main-text-2">
-                            Know the potential of your Amazon business sales with the power of Artificial Intelligence.
+                            Analyze the potential of your Amazon business sales with the power of Artificial Intelligence.
                     </div>
                     </div> :
                     <ReachUs
