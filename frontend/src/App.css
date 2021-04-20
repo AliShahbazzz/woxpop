@@ -26,7 +26,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(122, 122, 122);
+    background: rgb(160, 160, 160);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -78,27 +78,20 @@ textarea:focus, input:focus, div:focus {
     background-color: black;
 }
 
-/* .root-loader {
-    color: white;
-    background-color: #050117;
-    position: relative;
-    height: 100vh;
-}
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
 
-.root-loader-1 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 4%;
-    width: 40%;
-}
+@media (min-width: 481px) and (max-width: 767px) {}
 
-.root-loader-gif {
-    width: 100%;
-}
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
 
-.root-loader-2 {
-    font-size: 2em;
-    font-family: 'Josefin Sans';
-    text-align: center;
-} */
+@media (min-width: 320px) and (max-width: 480px) {
+    .App-intro-loader {
+        height: 30%;
+    }
+}

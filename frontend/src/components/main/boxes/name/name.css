@@ -63,3 +63,27 @@
 .MuiOutlinedInput-notchedOutline {
     color: #18b362;
 }
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .name {
+        padding: 10%;
+    }
+    .name-text-1 {
+        font-size: 1.1em;
+        color: #38f192;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+}

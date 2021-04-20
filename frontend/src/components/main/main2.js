@@ -18,6 +18,7 @@ export default class Main2 extends Component {
         super(props);
         this.child = React.createRef();
         this.state = {
+            showModalMobile: false,
             showLoader: false,
             nameFilled: false,
             allfields: false,
@@ -83,6 +84,12 @@ export default class Main2 extends Component {
         return arr[this.state.currBox]
     }
 
+    btnMobileClick = () => {
+        this.setState({
+            showModalMobile: true
+        })
+    }
+
     onSubmit = (x) => {
         if (x === 0) {
             axios.post('http://localhost:5000/api/home/',
@@ -119,18 +126,6 @@ export default class Main2 extends Component {
                 .catch((err) => console.log(err))
         }
     }
-
-    // renderLoader() {
-    //     if (this.state.showLoader) {
-    //         setTimeout(() => {
-    //             this.setState({ showLoader: false })
-    //         }, 15000);
-    //         console.log(this.state.showLoader)
-    //         return <Loader />
-    //     } else {
-    //         return null
-    //     }
-    // }
 
     calculate = () => {
         let val = this.state.values
@@ -203,6 +198,7 @@ export default class Main2 extends Component {
                     </div> :
                     <ReachUs
                         mainState={this.state.values}
+                        showModalMobile={this.state.showModalMobile}
                     />}
                 <Details
                     ref={this.child}
@@ -218,7 +214,18 @@ export default class Main2 extends Component {
                         >
                             Calculate
                 </Button>
-                    </div> : null}
+                    </div> :
+                    <div className="reach-btn-root-mobile">
+                        <div className="reach-text-3-mobile">
+                            You can only reach your potential with advanced strategies. Our Expert team can help you
+                    </div>
+                        <Button
+                            className="reach-btn-mobile"
+                            onClick={() => this.btnMobileClick()}
+                        >
+                            Let's Talk
+                        </Button>
+                    </div>}
                 <Modal
                     aria-labelledby="transition-modal-title"
                     aria-describedby="transition-modal-description"

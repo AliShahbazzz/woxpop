@@ -49,18 +49,64 @@
     margin-top: 30%;
 }
 
-/* .modal-control-btn {
-    margin: 1%;
-    background-color: #4b91fa;
-    color: #000000;
-}
-
-.modal-control-dbtn {
-    margin: 1%;
-    background-color: #3981ec;
-    color: #000000;
-} */
-
 .main-calculate {
     text-align: center;
+}
+
+.reach-btn-root-mobile {
+    display: none;
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .main-text {
+        text-align: center;
+        color: white;
+        margin: 10% 0;
+    }
+    .main-text-1 {
+        font-size: 1.5em;
+        font-weight: 600;
+        font-family: inherit;
+        text-align: center;
+    }
+    .main-text-2 {
+        font-size: 0.8em;
+        font-family: inherit;
+        text-align: center;
+        color: #38f192;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .main-calculate {
+        text-align: center;
+        margin-top: -10%;
+        margin-bottom: 20%;
+    }
+    .modal-control-btn {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .modal-render {
+        display: flex;
+    }
+    .modal-loader {
+        display: none;
+    }
+    .reach-btn-root-mobile {
+        display: block;
+    }
 }

@@ -27,3 +27,43 @@
     margin-top: -8% !important;
     margin-left: 38% !important;
 }
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .home-root {
+        margin: auto;
+        color: #fff !important;
+    }
+    .home-text {
+        width: 70%;
+        margin: 18% 8%;
+        margin-top: 40%;
+        color: #fff !important;
+    }
+    .home-text-1 {
+        font-size: 2em;
+        font-weight: 700;
+    }
+    .home-text-2 {
+        font-size: 0.8em;
+    }
+    .home-button {
+        background-color: #18b362 !important;
+        color: #fff !important;
+        text-transform: none !important;
+        font-size: 0.8em !important;
+        font-family: inherit !important;
+        margin-left: 8% !important;
+    }
+}

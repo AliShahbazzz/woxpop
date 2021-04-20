@@ -25,3 +25,27 @@
 .loader-root p {
     font-size: 1.3em;
 }
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .loader-img-1 {
+        width: 65%;
+    }
+    .loader-img-2 {
+        width: 55%;
+    }
+    .loader-img-3 {
+        width: 100%;
+    }
+}
