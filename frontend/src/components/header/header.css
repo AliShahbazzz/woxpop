@@ -29,3 +29,45 @@
     cursor: pointer;
     color: #d1d1d1;
 }
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .header {
+        background-color: inherit;
+        display: flex;
+        align-items: center;
+        padding: 2%;
+    }
+    .header-1 {
+        width: 50%;
+    }
+    .header-logo {
+        z-index: 9;
+        width: 55%;
+        cursor: pointer;
+    }
+    .header-2 {
+        width: 100%;
+        font-size: 0.6em;
+        color: #ffffff;
+        display: contents;
+    }
+    .header-2 div {
+        margin: 0 2%;
+    }
+    .header-2 div:hover {
+        cursor: pointer;
+        color: #d1d1d1;
+    }
+}

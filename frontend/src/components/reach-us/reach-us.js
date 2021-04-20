@@ -12,8 +12,13 @@ export default class Reach extends Component {
         super(props)
         this.state = {
             values: this.props.mainState,
-            showModal: false
+            showModal: this.props.showModalMobile
         }
+    }
+    componentWillReceiveProps(props) {
+        this.setState({
+            showModal: props.showModalMobile
+        })
     }
 
     onChange = (field, e) => {

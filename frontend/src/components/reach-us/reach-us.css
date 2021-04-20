@@ -76,3 +76,53 @@
 .MuiOutlinedInput-notchedOutline {
     color: #18b362;
 }
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .reach-main {
+        margin-top: 8%;
+    }
+    .reach-btn-root {
+        display: none;
+    }
+    .reach-btn-root-mobile {
+        margin-top: -20%;
+        margin-bottom: 20%;
+        text-align: center;
+    }
+    .reach-text-3-mobile {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .reach-btn-mobile {
+        margin-top: 3% !important;
+        background-color: #18b362 !important;
+        color: #000000 !important;
+        text-transform: none !important;
+        font-family: 'Josefin Sans' !important;
+        font-weight: 700 !important;
+        padding: 0.5% 4% !important;
+    }
+    .reach-text-1 {
+        font-size: 1em;
+        margin-bottom: 1%;
+        color: #fff;
+        font-family: 'Josefin Sans';
+        text-align: center;
+    }
+    .reach-text-2 {
+        padding: 4% 2%;
+    }
+}

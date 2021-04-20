@@ -71,17 +71,17 @@ export default class App extends Component {
         <div className="App-intro">
           <img className="App-intro-loader" src={img} alt="" />
         </div> :
-        (this.state.screenWidth) ?
-          <div className="App">
-            <Header
-              toHome={() => this.togglePage('home')}
-              toAnalyze={() => this.togglePage('analyze')}
-              toContact={() => this.togglePage('contact')}
-              toAbout={() => this.togglePage('about')}
-            />
-            {this.arr[this.state.show]}
-          </div>
-          : <div className='MobileError'>This Page isn't supported for mobile devices</div>
+        // (this.state.screenWidth) ?
+        <div className="App">
+          <Header
+            toHome={() => this.togglePage('home')}
+            toAnalyze={() => this.togglePage('analyze')}
+            toContact={() => this.togglePage('contact')}
+            toAbout={() => this.togglePage('about')}
+          />
+          {this.arr[this.state.show]}
+        </div>
+      //: <div className='MobileError'>This Page isn't supported for mobile devices</div>
     );
   }
 }
